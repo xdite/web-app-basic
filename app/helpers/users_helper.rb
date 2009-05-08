@@ -1,5 +1,17 @@
 module UsersHelper
   
+  def user_navigation_menu
+    menu = WebAppThemeHelper::Menu.new
+    if logged_in?
+      menu << ["Hi, #{current_user.login}", user_path(current_user) ]
+      menu << ["Settings", edit_user_path(current_user) ]
+      menu << ["Logout", logout_path ]
+    else
+      menu << ["Login", login_path ]
+    end
+    return menu
+  end
+  
   #
   # Use this to wrap view elements that the user can't access.
   # !! Note: this is an *interface*, not *security* feature !!
