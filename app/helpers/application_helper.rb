@@ -4,28 +4,6 @@ module ApplicationHelper
   def yield_or_default(message, default_message = "")
      message.nil? ? default_message : message
   end
-  
-  def welcome_navigation_menu
-    menu = WebAppThemeHelper::Menu.new
-    menu << ["Text", url_for(:controller => "welcome", :action => "text")]
-    menu << ["Table", url_for(:controller => "welcome", :action => "table") ]
-    menu << ["Forms", url_for(:controller => "welcome", :action => "form") ]
-    menu << ["Messages", url_for(:controller => "welcome", :action => "messages") ]
-    menu << ["2 Columns Forms", url_for(:controller => "welcome", :action => "forms2") ]
-    menu << ["List", url_for(:controller => "welcome", :action => "lists")]
-  end
-
-  def user_navigation_menu
-    menu = WebAppThemeHelper::Menu.new
-    if logged_in?
-      menu << ["Hi, #{current_user.login}", user_path(current_user) ]
-      menu << ["Settings", edit_user_path(current_user) ]
-      menu << ["Logout", logout_path ]
-    else
-      menu << ["Login", login_path ]
-    end
-    return menu
-  end
 
   def main_navigation_menu
     menu = WebAppThemeHelper::Menu.new
