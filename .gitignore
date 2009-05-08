@@ -1,0 +1,15 @@
+Thumbs.db
+.DS_Store
+public/photos/
+public/product_photos/
+tmp/
+sphinx_*.*
+log/
+doc/
+*~
+
+public/javascripts/all.js
+public/stylesheets/all.css
+
+TAGS
+
