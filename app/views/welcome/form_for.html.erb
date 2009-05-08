@@ -1,0 +1,19 @@
+<div class="block" id="block-forms">
+  <div class="secondary-navigation">
+      <%= render_menu(secondary_navigation_menu) %>
+    <div class="clear"></div>
+  </div>          
+  <div class="content">            
+    <h2 class="title">Forms</h2>
+    <div class="inner">
+        <% handicraft_form_for @user, users_path, :html => { :class => "form"}  do |f|%>
+            <%= f.text_field :login , :label => "Text Field" , :description => "Ex: a simple text"  %>
+            <%= f.text_area :login , :label => "Text Area", :description => "Ex: a simple text"%>
+            
+            <div class="group navform">
+              <input type="submit" class="button" value="Save &rarr;" /> or <a href="#header">Cancel</a>
+            </div>
+        <% end %>
+    </div>
+  </div>
+</div>

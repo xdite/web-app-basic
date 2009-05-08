@@ -1,5 +1,12 @@
 module WebAppThemeHelper
 
+  def handicraft_form_for(name, *args, &block)
+    options = args.last.is_a?(Hash) ? args.pop : {}
+    options = options.merge(:builder => WebAppThemeForm)
+    args = (args << options)
+    form_for(name, *args, &block)
+  end
+  
   class Menu < Array
     attr_accessor :css_id
     attr_accessor :css_class

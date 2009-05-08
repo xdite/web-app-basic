@@ -4,4 +4,8 @@ class WelcomeController < ApplicationController
   
   def text
   end
+  
+  def form_for
+    @user = User.new
+  end
 end

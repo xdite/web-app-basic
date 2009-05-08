@@ -4,6 +4,7 @@ module WelcomeHelper
     menu << ["Text", url_for(:controller => "welcome", :action => "text")]
     menu << ["Table", url_for(:controller => "welcome", :action => "table") ]
     menu << ["Forms", url_for(:controller => "welcome", :action => "form") ]
+    menu << ["FormFor", url_for(:controller => "welcome", :action => "form_for") ]
     menu << ["Messages", url_for(:controller => "welcome", :action => "messages") ]
     menu << ["2 Columns Forms", url_for(:controller => "welcome", :action => "forms2") ]
     menu << ["List", url_for(:controller => "welcome", :action => "lists")]
