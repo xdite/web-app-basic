@@ -1,9 +1,7 @@
 Thumbs.db
 .DS_Store
-public/photos/
-public/product_photos/
+database.yml
 tmp/
-sphinx_*.*
 log/
 doc/
 *~
