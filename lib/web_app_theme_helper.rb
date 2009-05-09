@@ -1,6 +1,6 @@
 module WebAppThemeHelper
 
-  def handicraft_form_for(name, *args, &block)
+  def webapp_form_for(name, *args, &block)
     options = args.last.is_a?(Hash) ? args.pop : {}
     options = options.merge(:builder => WebAppThemeForm)
     args = (args << options)

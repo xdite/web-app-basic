@@ -6,7 +6,7 @@
   <div class="content">            
     <h2 class="title">Forms</h2>
     <div class="inner">
-        <% handicraft_form_for @user, users_path, :html => { :class => "form"}  do |f|%>
+        <% webapp_form_for @user, users_path, :html => { :class => "form"}  do |f|%>
             <%= f.text_field :login , :label => "Text Field" , :description => "Ex: a simple text"  %>
             <%= f.text_area :login , :label => "Text Area", :description => "Ex: a simple text"%>
             

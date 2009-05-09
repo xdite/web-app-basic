@@ -1,16 +1,60 @@
-<h1>Log In</h1>
+<% content_for :footer do %> 
+<% end %>
+<% content_for :box do %> 
+    <div class="block" id="block-login">
+    <h2>Login Box</h2>        
+    <div class="content login">  
+    <% form_tag session_path , :class => "form login"  do -%>
+        <div class="group">
+            <div class="left">
+                <label class="label right">Login</label>
+            </div>
+            <div class="right">
+                <%= text_field_tag 'login' %>
+            </div>              
+            <div class="clear"></div>
+        </div>
+        <div class="group">
+            <div class="left">
+                <label class="label right">Password</label>
+            </div>
+            <div class="right">
+                <%= password_field_tag 'password' %>
+            </div>              
+            <div class="clear"></div>
+        </div>
+        
+        <div class="group">
+            <div class="left">
+                <label class="label right">OpenID</label>
+            </div>
+            <div class="right">
+                <%= text_field_tag "openid_url" %>
+            </div>              
+            <div class="clear"></div>
+        </div>
+        
+        <div class="group">
+            <div class="left">
+            </div>
+            <div class="right">
+                <!-- Uncomment this if you want this functionality
+                <p><%= label_tag 'remember_me', 'Remember me' %>
+                <%= check_box_tag 'remember_me', '1', @remember_me %></p>
+                -->
+            </div>              
+            <div class="clear"></div>
+        </div>
+        
+        <div class="group navform">
+            <div class="right">
+                <input type="submit" class="button" value="Login" />
+                <%= link_to 'Sign Up?', new_user_path %>
+            </div>
+            <div class="clear"></div>
+        </div>            
+     <% end %>
+    </div>
 
-<% form_tag session_path do -%>
-<p><%= label_tag 'login' %><br />
-<%= text_field_tag 'login', @login %></p>
+<% end %>
 
-<p><%= label_tag 'password' %><br/>
-<%= password_field_tag 'password', nil %></p>
-
-<!-- Uncomment this if you want this functionality
-<p><%= label_tag 'remember_me', 'Remember me' %>
-<%= check_box_tag 'remember_me', '1', @remember_me %></p>
--->
-
-<p><%= submit_tag 'Log in' %></p>
-<% end -%>

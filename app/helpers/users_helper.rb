@@ -8,6 +8,7 @@ module UsersHelper
       menu << ["Logout", logout_path ]
     else
       menu << ["Login", login_path ]
+      menu << ["Signup", signup_path ]
     end
     return menu
   end
