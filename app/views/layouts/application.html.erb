@@ -3,15 +3,20 @@
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<%= render_page_title %>
-	<%= stylesheet_link_tag "base", "themes/blue/style.css", "stickies" %>
+	<%= stylesheet_link_tag "base", "themes/blue/style.css", "stickies", "application.css" %>
 	<%= javascript_include_tag "jquery-1.3.min.js", "jquery.scrollTo.js","jquery.localscroll.js", "jrails"%>
 </head>
 <body>
   <div id="container">
     <div id="header">
       <h1><a href="/">Web App Theme</a></h1>
+      <% form_tag '', :method => :get  do %>
+        <%= select_tag("locale", options_for_select(LOCALES_AVAILABLE, I18n.locale), { :index => nil, :onchange => 'this.form.submit()'}) %>
+      <% end %>
       <div id="user-navigation">
+          
           <%= render_menu(user_navigation_menu) %>
+
         <div class="clear"></div>
       </div>      
       <div id="main-navigation">

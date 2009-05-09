@@ -39,3 +39,6 @@ Rails::Initializer.run do |config|
   # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   # config.i18n.default_locale = :de
 end
+
+I18n.default_locale = 'zh-TW'
+LOCALES_AVAILABLE = [ ['English',:en],['Chinese','zh-TW'] ]
