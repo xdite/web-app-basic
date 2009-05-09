@@ -1,0 +1,83 @@
+en:
+  footer:
+    copyright: © 2009 YourSite All Rights Reserved
+    about: About Us
+    terms: Terms of Use
+    policy: Privacy
+    faq: FAQ
+    blog: Blog
+    forum: Forum
+  login: Login
+  logout: Logout
+  signup: Sign Up
+  settings: Setting
+  
+  save: Save
+  submit: Submit
+  submiting: Submitting...
+  change: Change
+  update: Update
+  upload: Upload
+  are_you_sure: Are you sure?
+
+  is_incorrect: is incorrect
+  can_not_be_blank: can't be blanked
+  is_too_short: is too short
+  add: Add
+  cancel: Cancel
+  cancel_editing: Thanks, don't change anything.
+  delete: Delete
+  edit: Edit
+  y: Yes
+  n: No
+  or: or
+  
+  stickie:
+      close: Close
+      logged_out:  Logged out
+      logged_in: Logged in
+      authentication_failed: Username or password is wrong  
+      update_successfully: Data updated successfully
+      create_successfully: Data created successfully
+      delete_successfully: Data deleted successfully
+      create_unsuccessfully: Data creation failed
+      update_unsuccessfully: Data update failed
+      required_email_confirmed: Your E-Mail is not verified
+      required_permission: No permission
+      upload_buddy_icon_successfully: Uploaded buddy icon successfully
+      upload_buddy_icon_unsuccessfully: Upload icon failed, try again
+  username: Username
+  password: Password
+  type_it_one_more_time: Type once again
+        
+  full_name: Full name
+  first_name: First
+  last_name: Last
+  nickname: Nickname
+  sex: Sex
+  gender: Gender
+  "Are you sure?": "Are you sure?"
+  male: Male
+  female: Female
+
+  Sun: Sun
+  Mon: Mon
+  Tue: Tue
+  Wed: Wed
+  Thu: Thu
+  Fri: Fri
+  Sat: Sat
+
+  timezone: Timezone
+
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              bad_email: should look like an email address.
+            login:
+              bad_login_name: "use only letters, numbers, and .-_@ please."
+            nickname:
+              bad_nickname: "avoid non-printing characters and \\&gt;&lt;&amp;/ please."    

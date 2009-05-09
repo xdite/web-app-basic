@@ -12,6 +12,14 @@ class ApplicationController < ActionController::Base
   # Scrub sensitive parameters from your log
   # filter_parameter_logging :password
   
+  def browser_timezone
+    return nil if cookies[:tzoffset].blank?
+    @browser_timezone ||= begin
+      min = cookies[:tzoffset].to_i
+      TimeZone[-min.minutes]
+    end
+  end
+  
   def set_timezone
     Time.zone = browser_timezone || "Asia/Taipei"
     Time.zone = logged_in? ? current_user.time_zone : browser_timezone

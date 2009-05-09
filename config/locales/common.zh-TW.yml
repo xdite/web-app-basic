@@ -1,0 +1,91 @@
+"zh-TW":
+  footer:
+    copyright: © 2009 YourSite All Rights Reserved
+    about: 關於我們
+    terms: 使用條款
+    policy: 隱私權政策
+    faq: 常見問題
+    blog: 部落格
+    forum: 討論區
+  login: 登入
+  logout: 登出
+  signup: 註冊
+  settings: 設定
+  
+  save: 儲存
+  submit: 送出
+  submiting: 送出中
+  change: 儲存變更
+  update: 更新
+  upload: 上傳
+  are_you_sure: 您確定嗎？
+  are_you_sure_archive: 您確定要封存嗎？被封存的資料將不會同步在手機上。
+  is_incorrect: 不正確
+  can_not_be_blank: 不能空白
+  is_too_short: 太短了
+  add: 新增
+  cancel: 取消
+  cancel_editing: 取消編輯
+  delete: 刪除
+  edit: 編輯
+  y: 是
+  n: 否
+  or: 或
+  
+  stickie:
+      close: 關閉
+      logged_out:  您已登出
+      logged_in: 您已登入
+      authentication_failed: 帳號或密碼錯誤
+      update_successfully: 資料成功更新
+      create_successfully: 資料成功新增
+      delete_successfully: 資料成功刪除
+      create_unsuccessfully: 資料新增失敗
+      update_unsuccessfully: 資料更新失敗
+      archive_successfully: 成功存檔，資料將不會同步到您的手機。
+      required_email_confirmed: 您的 E-Mail 必須通過驗證
+      required_phone_confirmed: 您的手機必須通過驗證
+      required_permission: 您沒有權限進入
+
+  username: 登入帳號
+  password: 密碼
+  type_it_one_more_time: 請再輸入一次
+        
+  full_name: 姓名
+  first_name: 名
+  last_name: 姓
+  nickname: 暱稱 
+  sex: 性別
+  "Are you sure?": "你確定嗎?"
+  gender: 性別
+
+  Sun: 星期天
+  Mon: 星期一
+  Tue: 星期二
+  Wed: 星期三
+  Thu: 星期四
+  Fri: 星期五
+  Sat: 星期六
+  
+
+  timezone: 時區
+  
+  country_code: 國碼
+  mobile_phone_number: 手機號碼
+  phone_operator: 手機營運商
+  phone_manufacturer: 手機廠牌
+  phone_module: 手機型號
+  
+
+    
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            email:
+              bad_email: E-mail 格式不正確
+            login:
+              bad_login_name: "只允許英文字母、數字和 .-_@ 符號"
+            nickname:
+              bad_nickname: "不允許不可以顯示的字元"
