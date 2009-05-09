@@ -7,6 +7,52 @@ module WebAppThemeHelper
     form_for(name, *args, &block)
   end
   
+  def render_table(rows, renderrers, table_options = {})
+    table_options = {
+      :has_header => true,
+      :has_row_info => false,
+      :id => nil,
+      :class_name => "table"
+      }.merge(table_options)
+
+    table_tag_options = table_options[:id] ? { :id => table_options[:id], :class => table_options[:class_name] } : { :class => table_options[:class_name] }
+    
+    table = TagNode.new('table', table_tag_options)
+    if table_options[:has_header] == true
+      table << thead = TagNode.new(:thead) 
+      thead << tr = TagNode.new(:tr, :class => 'odd')
+       
+      renderrers.each do |renderrer| 
+        tr << th = TagNode.new(:th)
+        th << renderrer[0]
+      end
+    end    
+    
+    table << tbody = TagNode.new('tbody')
+    row_info = {}
+    row_info[:total] = rows.length
+    rows.each_with_index do |row,i|
+      row_info[:current] = i
+      tbody << tr = TagNode.new('tr', :class => cycle("","odd") )
+      renderrers.each do |renderrer|
+        tr << td = TagNode.new('td')
+        
+        if renderrer[1].class == Proc
+          if table_options[:has_row_info] == true
+            td << renderrer[1].call(row, row_info)
+          else
+            td << renderrer[1].call(row)
+          end
+        else
+          td << renderrer[1]
+        end
+      end
+    end
+    
+    return table.to_s
+  end
+  
+  
   class Menu < Array
     attr_accessor :css_id
     attr_accessor :css_class

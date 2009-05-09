@@ -6,39 +6,21 @@
   <div class="content">          
     <h2 class="title">Tables</h2>
     <div class="inner">
-      <form action="#" class="form">
-        <table class="table">
-          <tr>             
-            <th class="first"><input type="checkbox" class="checkbox toggle" /></th>   
-            <th>ID</th>
-            <th>Login</th>
-            <th>Name</th>
-            <th>Surname</th>
-            <th class="last">&nbsp;</th>
-          </tr>
-          <tr class="odd">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>1</td><td>hulk</td><td>Hulk</td><td>Hogan</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
-          <tr class="even">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>2</td><td>ultimate</td><td>Ultimate</td><td>Warrior</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
-          <tr class="odd">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>3</td><td>andre</td><td>Andre</td><td>The Giant</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
-          <tr class="even">
-            <td><input type="checkbox" class="checkbox" name="id" value="1" /></td><td>4</td><td>machoman</td><td>Macho Man</td><td>Randy Savage</td><td class="last"><a href="#">show</a> | <a href="#">edit</a> | <a href="#">destroy</a></td>
-          </tr>
-        </table>
+          <%= render_table(@users,
+                          [             
+                              ["ID",lambda { |p| p.id}],
+                              ["Login",lambda { |p| p.login}],
+                              ["Name",lambda { |p| p.name}],
+                              ["Surname",lambda { |p| p.name}],
+                              ["Action",lambda { |p| link_to("show",user_path(p)) + " | " + link_to("edit",edit_user_path(p))+" | "+link_to('delete',  user_path(p), :title => "Delete this advertise", :confirm => "Are you sure?", :method => :delete)}],
+                              ["Start at",lambda { |p| p.created_at}],
+                            ]
+                          ) %>
+
         <div class="actions-bar">
-          <div class="actions">
-            <input type="submit" class="button" value="Delete" />
-          </div>
-          <div class="pagination">
-            <span class="disabled prev_page">« Previous</span><span class="current">1</span><a rel="next" href="#">2</a><a href="#">3</a><a href="#">4</a><a href="#">5</a><a href="#">6</a><a href="#">7</a><a href="#">8</a><a href="#">9</a><a href="#">10</a><a href="#">11</a><a rel="next" class="next_page" href="#">Next »</a>
-          </div>                  
+          <%= will_paginate(@users)%>
           <div class="clear"></div>
         </div>
-      </form>
     </div>
   </div>
 </div>
